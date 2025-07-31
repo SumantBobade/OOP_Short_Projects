@@ -53,24 +53,42 @@ public:
 
 class Inventory{
 private:
-	vector<Product> items;
+	vector<Product> products;
 public:
 	void addProduct(Product product){
-            
+            bool found = false;
+            for(auto& p:products){
+                if(p.getId==product.getId){
+                    cout<<"Id already Exist."<<endl;
+                    found=true;
+                    break;               
+                }            
+            }
+            if(!found){
+                products.push_back(product);
+                cout<<"Product added successfully."<<endl;
+                cout<<"-----------------------------------------------------------------------------------------"<<endl;
+            }
     }
     
     void removeProduct(int id){
 
         bool found = false;
-        for(auto &p: product){
-}
+        for(auto p& products){
+            if(p->id==id){
+                products.erase(p);
+                found = true;
+                cout<<"Product removed successfully"     
+            }
+        }
+    }
 
 
-
-
-
-}
-    Product* findProduct(int id){}
+    Product* findProduct(int id){
+        for(auto i=product){
+            if()
+        }    
+    }
     void updateProduct(int id, string name, sting category, double price, int quality){}
     void printProduct() const{}
 };
